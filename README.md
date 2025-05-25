@@ -1,2 +1,2 @@
-# wolemi
-An Event Ticket Platform
+# Wòlémi 
+## Event Ticketing Platform
