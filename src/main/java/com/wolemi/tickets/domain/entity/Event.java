@@ -1,6 +1,7 @@
 package com.wolemi.tickets.domain.entity;
 
 import com.wolemi.tickets.domain.EventStatusEnum;
+import com.wolemi.tickets.domain.TicketStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -56,6 +57,9 @@ public class Event {
 
     @ManyToMany(mappedBy = "staffingEvents")
     private List<User> staff = new ArrayList<>();
+
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+    private List<TicketType> ticketTypes = new ArrayList<>();
 
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
